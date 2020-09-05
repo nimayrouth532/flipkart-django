@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+Flipkart Price Tracker
+{% endblock  %}
+{% block content %}
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form action='flipkart-tracker' method='POST'>
+    {% csrf_token %}
+      <input type="text" placeholder="Enter Flipkart URL" name="flip"/>
+      <input type="text" placeholder="Enter price" name="flip2"/>
+      <button>SUBMIT</button>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>
+{% endblock  %}
